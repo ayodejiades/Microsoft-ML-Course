@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="UFO Appearance Prediction">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>🛸 UFO Appearance Prediction! 👽</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+</head>
+
+<body>
+<div class="title-wrap mb-5" data-aos="fade-up">
+<h1>🛸 UFO Appearance Prediction! 👽</h1>
+ <div class="grid">
+  <div class="box">
+  <p>According to the number of seconds, latitude and longitude, which country is likely to have reported seeing a UFO?</p>
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="seconds" placeholder="Seconds" required="required" min="0" max="60" />
+      <input type="text" name="latitude" placeholder="Latitude" required="required" />
+		  <input type="text" name="longitude" placeholder="Longitude" required="required" />
+      <button type="submit" class="btn">Predict country where the UFO is seen</button>
+    </form>
+
+  
+   <p>{{ prediction_text }}</p>
+
+ </div>
+</div>
+</div>
+
+</body>
+<footer><h6>&copy; 2022 UFO </h6></footer>
+</html>
